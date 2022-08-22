@@ -2,12 +2,21 @@ package uk.aston.placestest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,16 +35,33 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
-        DrawerLayout drawerLayout = findViewById(R.id.mainActivityLayout);
-        Set<Integer> topLevelDestinations = new HashSet<>();
-        topLevelDestinations.add(R.id.runFragment);
+        BottomNavigationView navView = findViewById(R.id.nav);
+        NavController navController = Navigation.findNavController(this, R.id.mainFragment);
+        NavigationUI.setupWithNavController(navView, navController);
 
-        if (null != drawerLayout)
-        {
-            appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations)
-                    .setDrawerLayout(drawerLayout)
-                    .build();
-        }
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+
+
+                    case R.id.savedFragment:
+
+                        startActivity(new Intent(getApplicationContext(), ViewJourneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.homeFragment:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
     }
 

@@ -5,16 +5,23 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,6 +172,35 @@ public class ViewJourneyActivity extends AppCompatActivity
         //Database retrieval
         final MyRoomDatabase db = MyRoomDatabase.getDatabase(this);
         JourneyViewModel mJourneyViewModel;
+
+        BottomNavigationView navView = findViewById(R.id.nav);
+
+
+
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+
+
+                    case R.id.savedFragment:
+
+                        startActivity(new Intent(getApplicationContext(), ViewJourneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.homeFragment:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
+
+
     }
 
     //filter method which is called everytime something is entered in edit text
