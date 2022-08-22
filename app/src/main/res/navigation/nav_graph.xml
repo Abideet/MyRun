@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/runFragment">
+
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="uk.aston.placestest.RunFragment"
+        android:label="RunFragment"
+        tools:layout="@layout/fragment_run">
+<!--        <action-->
+<!--            android:id="@+id/action_runFragment_to_trackJourneyFragment"-->
+<!--            app:destination="@id/trackJourneyFragment" />-->
+        <action
+            android:id="@+id/action_runFragment_to_placesActivity"
+            app:destination="@id/placesActivity" />
+        <action
+            android:id="@+id/action_runFragment_to_trackJourneyFragment"
+            app:destination="@id/trackJourneyFragment" />
+
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/progressFragment"-->
+<!--        android:name="uk.aston.placestest.ProgressFragment"-->
+<!--        android:label="ProgressFragment"-->
+<!--        tools:layout="@layout/fragment_progress"/>-->
+    <activity
+        android:id="@+id/placesActivity"
+        android:name="uk.aston.placestest.NearbyParks.MapsActivity"
+        android:label="PlacesActivity" />
+    <fragment
+        android:id="@+id/trackJourneyFragment"
+        android:name="uk.aston.placestest.TrackJourneyFragment"
+        android:label="TrackJourneyFragment"
+        tools:layout="@layout/fragment_track_journey"/>
+
+    <!--    <activity-->
+<!--        android:id="@+id/viewJourneyFragment"-->
+<!--        android:name="uk.aston.myrunnerapp.ViewJourneyActivity"-->
+<!--        android:label="View Journey"-->
+<!--        tools:layout="@layout/fragment_view_journey" />-->
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/trackJourneyFragment"-->
+<!--        android:name="uk.aston.myrunnerapp.TrackJourneyFragment"-->
+<!--        android:label="fragment_track_journey"-->
+<!--        tools:layout="@layout/fragment_track_journey" >-->
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_trackJourneyFragment_to_viewJourneyFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/viewJournetFragment" />&ndash;&gt;-->
+<!--        <action-->
+<!--            android:id="@+id/action_trackJourneyFragment_to_weatherFragment"-->
+<!--            app:destination="@id/weatherFragment" />-->
+
+<!--&lt;!&ndash;        <action&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/action_trackJourneyFragment_to_saveNameFragment"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:destination="@id/saveNameFragment" />&ndash;&gt;-->
+
+<!--    </fragment>-->
+<!--    <fragment-->
+<!--        android:id="@+id/weatherFragment"-->
+<!--        android:name="uk.aston.myrunnerapp.WeatherFragment"-->
+<!--        android:label="fragment_weather"-->
+<!--        tools:layout="@layout/fragment_weather" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/saveNameFragment"-->
+<!--        android:name="uk.aston.myrunnerapp.SaveNameFragment"-->
+<!--        android:label="fragment_save_name"-->
+<!--        tools:layout="@layout/fragment_save_name" >-->
+<!--    </fragment>-->
+
+</navigation>

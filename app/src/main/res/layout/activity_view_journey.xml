@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewJourneyActivity">
+
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           />
+
+
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationY="29dp"
+            >
+                <TableRow android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp">
+                        <TextView
+                            android:id="@+id/idHeader"
+                            style="@style/text_view_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:text="ID"
+                            android:backgroundTint="#FF0000"
+                            android:elevation="8dp"
+                            android:layout_weight="0.25"
+                            />
+
+                        <TextView
+                            android:id="@+id/nameHeader"
+                            style="@style/text_view_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:backgroundTint="@color/blue_500"
+                            android:text="Name"
+                            android:elevation="8dp"
+                            android:layout_weight="0.25"
+                            />
+
+                        <TextView
+                            android:id="@+id/distanceHeader"
+                            style="@style/text_view_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Distance"
+                            android:textSize="13sp"
+                            android:backgroundTint="#FF0000"
+                            android:layout_weight="0.25"
+                            android:elevation="8dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/speedHeader"
+                            style="@style/text_view_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:textSize="13sp"
+                            android:backgroundTint="@color/blue_500"
+
+                            android:text="Speed"
+                            android:elevation="8dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/timeHeader"
+                            style="@style/text_view_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:textSize="13sp"
+                            android:backgroundTint="#FF0000"
+                            android:text="Duration"
+                            android:elevation="8dp"
+                            />
+                </TableRow>
+
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="565dp"
+            android:layout_margin="16dp"
+            android:translationY="80dp"
+            tools:listitem="@layout/recyclerview_item" />
+
+<!--    </androidx.constraintlayout.widget.Group>-->
+
+</FrameLayout>
