@@ -15,6 +15,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import uk.aston.placestest.R;
 
+//TODO: - Use map lat & long data to find weather in one click
+
+
 public class WeatherActivity extends AppCompatActivity {
 
     EditText inputCity;
@@ -32,8 +35,8 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
-    public void getWeather(View v){
-
+    public void getWeather(View v)
+    {
         Retrofit rBuild = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/data/2.5/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -42,7 +45,8 @@ public class WeatherActivity extends AppCompatActivity {
 
         //Send request with the city name that the user has entered
         Call<Example> examplecall=myapi.getTemperature(inputCity.getText().toString().trim(),apikey);
-        examplecall.enqueue(new Callback<Example>() {
+        examplecall.enqueue(new Callback<Example>()
+        {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response)
             {
@@ -55,6 +59,7 @@ public class WeatherActivity extends AppCompatActivity {
                     Toast.makeText(WeatherActivity.this,response.code()+" ",Toast.LENGTH_LONG).show();
                     return;
                 }
+
                 //Parse and Store response
                 Example mydata=response.body();
                 Main main=mydata.getMain();
@@ -66,13 +71,11 @@ public class WeatherActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Example> call, Throwable t) {
+            public void onFailure(Call<Example> call, Throwable t)
+            {
                 Toast.makeText(WeatherActivity.this,t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 }
 

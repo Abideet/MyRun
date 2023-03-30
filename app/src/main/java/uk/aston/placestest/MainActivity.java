@@ -23,6 +23,7 @@ import java.util.Set;
 
 import uk.aston.placestest.NearbyParks.MapsActivity;
 
+//2023 Push
 public class MainActivity extends AppCompatActivity
 {
 
@@ -42,14 +43,12 @@ public class MainActivity extends AppCompatActivity
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                //switch case to switch between bottom navigation bar
                 switch(item.getItemId())
                 {
-
-
                     case R.id.savedFragment:
-
                         startActivity(new Intent(getApplicationContext(), ViewJourneyActivity.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -57,7 +56,6 @@ public class MainActivity extends AppCompatActivity
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
             }
