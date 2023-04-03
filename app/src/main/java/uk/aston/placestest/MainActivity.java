@@ -1,6 +1,8 @@
 package uk.aston.placestest;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,7 +39,15 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navView = findViewById(R.id.nav);
+
+        navView.setSelectedItemId(R.id.homeFragment);
+
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.homeFragment, R.id.savedFragment).build();
         NavController navController = Navigation.findNavController(this, R.id.mainFragment);
+
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
         NavigationUI.setupWithNavController(navView, navController);
 
 
@@ -60,6 +70,10 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
         });
+
+
+
+        //navView.setItemTextColor(ColorStateList.valueOf(Color.RED));
 
     }
 

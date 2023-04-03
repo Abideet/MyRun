@@ -30,6 +30,7 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        //get user location data from lat/lng in parks feature rather than them having to enter the city name
         inputCity = findViewById(R.id.inputCity);
         viewTemp = findViewById(R.id.tempView);
 

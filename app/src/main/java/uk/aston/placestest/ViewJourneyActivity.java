@@ -175,6 +175,7 @@ public class ViewJourneyActivity extends AppCompatActivity
 
         BottomNavigationView navView = findViewById(R.id.nav);
 
+        navView.setSelectedItemId(R.id.savedFragment);
 
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
