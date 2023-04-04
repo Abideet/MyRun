@@ -10,13 +10,16 @@ import java.util.List;
 
 public class Parser
 {
+
+    public String lat = "";
+    String lng = "";
+
     private HashMap<String, String> getSingleNearbyPlace(JSONObject googlePlaceJSON)
     {
         HashMap<String, String> map = new HashMap<>();
         String placeName = "-NA-";
         String vicinity = "-NA-";
-        String lat = "";
-        String lng = "";
+
         String ref = "";
 
         try

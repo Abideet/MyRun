@@ -13,6 +13,10 @@ public interface ApiInterface
     Call<Example> getTemperature(@Query("q") String city,
                                  @Query("appid") String apikey);
 
+//    @GET("weather")
+//    Call<Example> getTemperature(@Query("q") String lat, String lng,
+//                                 @Query("appid") String apikey);
+
 
 
 
