@@ -78,6 +78,8 @@ public class TrackJourneyFragment extends Fragment implements View.OnTouchListen
     public TextView tDistance;
     public TextView tTime;
 
+    public TextView temp;
+
     String time;
     String dist;
     String avgs;
@@ -188,6 +190,8 @@ public class TrackJourneyFragment extends Fragment implements View.OnTouchListen
         startButton = v.findViewById(R.id.startButton);
         endButton = v.findViewById(R.id.stopButton);
 
+        temp = v.findViewById(R.id.temp);
+        temp.setVisibility(View.INVISIBLE);
 
         endButton.setEnabled(false);
         startButton.setEnabled(false);
@@ -290,8 +294,19 @@ public class TrackJourneyFragment extends Fragment implements View.OnTouchListen
             @Override
             public void onClick(View view) {
 
+//                temp.setVisibility(View.VISIBLE);
+//
+//                WeatherActivity w = new WeatherActivity();
+//
+//                temp.setText(w.getTemperature());
+
+
+
+
+
                 //NavHostFragment.findNavController(TrackJourneyFragment.this).navigate(R.id.action_trackJourneyFragment_to_weatherFragment);
 
+                //take user to previous activity
                 Intent intent = new Intent(getActivity(), WeatherActivity.class);
                 startActivity(intent);
 

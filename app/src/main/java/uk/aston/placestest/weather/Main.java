@@ -22,13 +22,19 @@ public class Main {
     @Expose
     private Double tempMax;
 
+
+
+
+
+
+
     public Double getTemp() {
         return temp;
     }
 
-    public void setTemp(Double temp) {
-        this.temp = temp;
-    }
+//    public void setTemp(Double temp) {
+//        this.temp = temp;
+//    }
 
     public Integer getPressure() {
         return pressure;
@@ -61,6 +67,8 @@ public class Main {
     public void setTempMax(Double tempMax) {
         this.tempMax = tempMax;
     }
+
+
 
 }
 

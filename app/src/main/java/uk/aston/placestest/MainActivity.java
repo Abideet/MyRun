@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity
         NavigationUI.setupWithNavController(navView, navController);
 
 
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item)
             {
@@ -83,4 +84,6 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
+
+
 }

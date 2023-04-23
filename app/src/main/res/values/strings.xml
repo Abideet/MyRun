@@ -2,4 +2,13 @@
     <string name="app_name">MyRun</string>
     <string name="title_home">Home</string>
     <string name="title_saved">Saved</string>
+
+<!--    Weather display Strings-->
+    <string name="temp_label">Temperature:</string>
+    <string name="pressure_label">Pressure:</string>
+    <string name="humidity_label">Humidity:</string>
+    <string name="tempMax_label">Highs:</string>
+    <string name="tempMin_label">Lows:</string>
+
+
 </resources>

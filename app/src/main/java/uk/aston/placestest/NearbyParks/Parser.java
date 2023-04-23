@@ -1,5 +1,7 @@
 package uk.aston.placestest.NearbyParks;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,8 +13,18 @@ import java.util.List;
 public class Parser
 {
 
+
+
     public String lat = "";
     String lng = "";
+
+
+
+    String latGlobal;
+    String lngGlobal;
+
+
+
 
     private HashMap<String, String> getSingleNearbyPlace(JSONObject googlePlaceJSON)
     {
@@ -35,6 +47,10 @@ public class Parser
             lat = googlePlaceJSON.getJSONObject("geometry").getJSONObject("location").getString("lat");
             lng = googlePlaceJSON.getJSONObject("geometry").getJSONObject("location").getString("lng");
             ref = googlePlaceJSON.getString("reference");
+
+            //Log.e("latitude", getLat());
+            Log.e("longitude", lng);
+
 
             map.put("place_name", placeName);
             map.put("vicinity", vicinity);
@@ -93,4 +109,23 @@ public class Parser
 
         return NearbyPlacesList;
     }
+
+
+
+
+    public String getLng()
+    {
+
+        return lngGlobal;
+    }
+
+    public String getLat()
+    {
+        return latGlobal;
+    }
+
+
+
+
+
 }

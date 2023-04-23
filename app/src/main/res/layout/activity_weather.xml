@@ -1,32 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:layout_height="match_parent">
 
-    <EditText
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".weather.WeatherActivity">
+
+
+        <TextView
+            android:id="@+id/tempLabel"
+            android:layout_width="193dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="42dp"
+            android:gravity="center_horizontal"
+            android:text="@string/temp_label"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/tempView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        TODO: Could replace hit with icon-->
+        <TextView
+            android:id="@+id/tempView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="Temp"
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tempLabel"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="1.0"
+
+            app:layout_constraintStart_toEndOf="@id/tempLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.091" />
+
+
+        <TextView
+            android:id="@+id/pressureLabel"
+            android:layout_width="193dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/pressure_label"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/tempView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempLabel" />
+
+
+        <TextView
+            android:id="@+id/pressureView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="Pres"
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pressureLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/pressureLabel"
+            app:layout_constraintTop_toTopOf="@id/tempView" />
+
+        <TextView
+            android:id="@+id/humidityLabel"
+            android:layout_width="193dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/humidity_label"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/pressureView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pressureLabel" />
+
+
+        <TextView
+            android:id="@+id/humidityView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:hint="Pres"
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/humidityLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/humidityLabel"
+            app:layout_constraintTop_toTopOf="@id/tempView" />
+
+        <TextView
+            android:id="@+id/windSpeedLabel"
+            android:layout_width="193dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Wind Speed:"
+            android:textSize="30sp"
+            android:translationX="-10dp"
+            app:layout_constraintEnd_toEndOf="@id/humidityLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidityLabel" />
+
+
+        <TextView
+            android:id="@+id/windSpeedView"
+            android:layout_width="197dp"
+            android:layout_height="49dp"
+            android:gravity="center_horizontal"
+            android:hint="Pres"
+            android:textSize="30sp"
+            android:translationX="-25dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/windSpeedLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/windSpeedLabel"
+            app:layout_constraintTop_toTopOf="@id/humidityView" />
+
+
+        <TextView
+            android:id="@+id/rain1hLabel"
+            android:layout_width="193dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Rain For The Last Hour: "
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@id/windSpeedLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/windSpeedLabel" />
+
+
+        <TextView
+            android:id="@+id/rain1hView"
+            android:layout_width="199dp"
+            android:layout_height="66dp"
+            android:gravity="center_horizontal"
+            android:hint="Pres"
+
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rain1hLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/rain1hLabel"
+            app:layout_constraintTop_toTopOf="@id/windSpeedView" />
+
+
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMaxLabel"-->
+<!--            android:layout_width="193dp"-->
+<!--            android:layout_height="62dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:text="@string/tempMax_label"-->
+<!--            android:textSize="30sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/humidityLabel"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/humidityLabel" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMaxView"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:hint="Pres"-->
+<!--            android:textSize="30sp"-->
+<!--            app:layout_constraintBaseline_toBaselineOf="@+id/tempMaxLabel"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@id/tempMaxLabel"-->
+<!--            app:layout_constraintTop_toTopOf="@id/humidityView" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMinLabel"-->
+<!--            android:layout_width="193dp"-->
+<!--            android:layout_height="62dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:text="@string/tempMax_label"-->
+<!--            android:textSize="30sp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/tempMaxLabel"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/tempMaxLabel" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tempMinView"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:hint="Pres"-->
+<!--            android:textSize="30sp"-->
+<!--            app:layout_constraintBaseline_toBaselineOf="@+id/tempMinLabel"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toEndOf="@id/tempMinLabel"-->
+<!--            app:layout_constraintTop_toTopOf="@id/humidityView" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your City name"
-        android:id="@+id/inputCity"/>
+        android:orientation="horizontal"
+        android:translationY="600dp">
+
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/weatherButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Get Weather"
-        android:onClick="getWeather"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tempView"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:textSize="30sp"
-        android:hint="Temperature"/>
+        android:layout_weight="1"
+        android:text="Get Weather" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -49,6 +49,9 @@ public class MapsActivity extends FragmentActivity implements
     private Location lastLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
+
+
+
     private double latitude, longitude;
     private int ProximityRadius = 10000;
 
@@ -77,7 +80,8 @@ public class MapsActivity extends FragmentActivity implements
         place.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
 
                 String hospital = "hospital", park = "park";
 
@@ -370,4 +374,16 @@ public class MapsActivity extends FragmentActivity implements
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
+//    public String getLatitude() {
+//        String lat = String.valueOf(latitude);
+//
+//        return lat;
+//    }
+//
+//    public String getLongitude() {
+//        String lng = String.valueOf(longitude);
+//
+//        return lng;
+//    }
 }

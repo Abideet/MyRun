@@ -92,6 +92,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/distance" />
 
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="248dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="142dp"
+                android:text="temp"
+                android:textColor="@color/blue_500"
+                android:textSize="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
